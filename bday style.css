@@ -1,0 +1,101 @@
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background: linear-gradient(to right, #e0eafc, #cfdef3); /* Soft gradient background */
+    margin: 0;
+    padding: 20px;
+}
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 24px;
+    color: #fff;
+    background-color: #6a0dad; /* Purple color */
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 50px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+.button:hover {
+    background-color: #9b30ff; /* Lighter shade of purple */
+    transform: translateY(-3px);
+}
+.card {
+    display: none;
+    background-color: #fff;
+    border: 2px solid #ffd700; /* Gold border */
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+img {
+    width: 150px;
+    margin-top: 20px;
+}
+/* Heart animations */
+.heart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #ff69b4; /* Pink hearts */
+    margin-left: -15px;
+    margin-top: -15px;
+    transform: rotate(-45deg);
+    animation: float 2s infinite;
+}
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #ff69b4;
+    border-radius: 50%;
+}
+.heart::before {
+    top: -15px;
+    left: 0;
+}
+.heart::after {
+    left: 15px;
+    top: 0;
+}
+@keyframes float {
+    0% {
+        opacity: 0;
+        transform: translateY(0) rotate(-45deg);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100px) rotate(-45deg);
+    }
+}
+/* Responsive Design */
+@media only screen and (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    .button {
+        font-size: 20px;
+        padding: 10px 20px;
+        margin-top: 30px;
+    }
+    .card {
+        padding: 20px;
+    }
+    img {
+        width: 100px;
+    }
+}

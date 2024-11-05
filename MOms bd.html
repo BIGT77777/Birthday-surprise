@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Birthday Animation</title>
+    <style>
+        #message {
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            white-space: pre;
+        }
+    </style>
+</head>
+<body>
+    <div id="message"></div>
+    <script>
+        const frames = [
+            "      Happy Birthday, Mom!\n     _____  \n    |     | \n  __|     |__  \n |__       __| \n    |_____| \n   ~Love & Hugs~",
+            "      Happy Birthday, Mom!\n     _____  \n    |     | \n  __|     |__  \n |__   *   __| \n    |_____| \n   ~Love & Hugs~",
+            "      Happy Birthday, Mom!\n     _____  \n    |     | \n  __|  *  |__  \n |__       __| \n    |_____| \n   ~Love & Hugs~"
+        ];
+        let frameIndex = 0;
+        function animateMessage() {
+            document.getElementById('message').textContent = frames[frameIndex];
+            frameIndex = (frameIndex + 1) % frames.length;
+        }
+        setInterval(animateMessage, 500);
+    </script>
+</body>
+</html>
